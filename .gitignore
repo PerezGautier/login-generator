@@ -1,0 +1,6 @@
+# ignorer le dossier target/
+/target
+#ignorer le dossier .idea/
+/.idea
+#ignorer les fichiers ayant pour extensions .iml
+*.iml
