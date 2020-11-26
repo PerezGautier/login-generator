@@ -32,4 +32,20 @@ public class LoginGeneratorTest extends TestCase {
         assertEquals("JRAL3", login2);
         assertTrue(loginService.loginExists("JRAL3"));
     }
+
+    public void testGenerateLoginSameLogin(){
+        //When
+        String login = loginGenerator.generateLoginForNomAndPrenom("Rolling","Jean");
+        //Then
+        assertEquals("JROL1", login);
+        assertTrue(loginService.loginExists("JROL1"));
+    }
+
+    public void testGenerateLoginWithAccent(){
+        //When
+        String login = loginGenerator.generateLoginForNomAndPrenom("Dùrand","Paul");
+        //Then
+        assertEquals("PDUR", login);
+        assertTrue(loginService.loginExists("PDUR"));
+    }
 }
