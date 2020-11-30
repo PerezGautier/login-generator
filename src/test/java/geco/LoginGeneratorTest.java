@@ -22,6 +22,14 @@ public class LoginGeneratorTest extends TestCase {
         assertTrue(loginService.loginExists("PDUR"));
     }
 
+    public void testGenerateLoginForNomAndPrenomUnder3() {
+        //When
+        String login = loginGenerator.generateLoginForNomAndPrenom("Du","Paul");
+        //Then
+        assertEquals("PDU", login);
+        assertTrue(loginService.loginExists("PDU"));
+    }
+
     public void testGenerateLoginForNomAndPrenomAlreadyExisting(){
         //When
         String login = loginGenerator.generateLoginForNomAndPrenom("Ralling","John");
